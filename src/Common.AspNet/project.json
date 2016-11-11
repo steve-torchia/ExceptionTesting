@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0-*",
+  "description": "Common.AspNet Library",
+  "authors": [
+    "author"
+  ],
+  "buildOptions": {
+    "debugType": "portable",
+    "warningsAsErrors": true
+  },
+  "dependencies": {
+    "Common": "1.0.0-*",
+    "Microsoft.AspNetCore.Authentication": "1.0.0",
+    "Microsoft.AspNetCore.Http": "1.0.0",
+    "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
+    "Microsoft.AspNetCore.Server.Kestrel.Https": "1.0.1",
+    "Mindscape.Raygun4Net.AspNetCore": "5.3.1"
+  },
+  "frameworks": {
+    "netstandard1.6": {
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+  "tooling": {
+    "defaultNamespace": "Common.AspNet"
+  }
+}

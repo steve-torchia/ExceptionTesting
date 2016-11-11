@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0-*",
+  "description": "Common Library",
+  "authors": [
+    " author"
+  ],
+  "buildOptions": {
+    "debugType": "portable",
+    "warningsAsErrors": true
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "9.0.1",
+    "System.Collections.Immutable": "1.2.0",
+    "System.ComponentModel.TypeConverter": "4.1.0",
+    "System.Linq.Expressions": "4.1.0",
+    "System.Linq.Queryable": "4.0.1",
+    "System.Reflection.TypeExtensions": "4.1.0"
+  },
+  "frameworks": {
+    "netstandard1.6": {
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+  "tooling": {
+    "defaultNamespace": "Common"
+  }
+}
