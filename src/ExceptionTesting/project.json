@@ -21,7 +21,7 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "Mindscape.Raygun4Net.AspNetCore": "5.3.1",
+    "Mindscape.Raygun4Net.AspNetCore": "5.3.2",
     "Common": "1.0.0-*",
     "Common.AspNet": "1.0.0-*"
   },

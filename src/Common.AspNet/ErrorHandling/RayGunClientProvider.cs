@@ -21,35 +21,35 @@ namespace Common.AspNet
             _apiKey = apiKey;
         }
 
-        public override RaygunClient GetClient(RaygunSettings settings)
-        //public override RaygunClient GetClient(RaygunSettings settings, HttpContext context)
+        //public override RaygunClient GetClient(RaygunSettings settings)
+        public override RaygunClient GetClient(RaygunSettings settings, HttpContext context)
         {
             settings.ApiKey = _apiKey;
             
-            var client = base.GetClient(settings);
+            var client = base.GetClient(settings, context);
 
-            client.SendingMessage += (sender, args) =>
-            {
-                if (args.Message.Details.User == null)
-                {
-                    // Possbily an unhandled exception because we "should" be supplying user data when we handle errors
-                    // todo: figure out a way to get the user information from the context here
-                    // NOTE:  when RG 5.3.2 gets its bug fixed we can get user info from the HTTP Context
-                    // related: https://raygun.com/forums/thread/65336#65335 &  https://raygun.com/forums/thread/65407
-                    args.Message.Details.User = new RaygunIdentifierMessage(UnhandledExceptionTag)
-                    {
-                        UUID = "abc123",
-                        Email = "ronald@example.com",
-                        FullName = "Ronald Raygun",
-                    };
+            //client.SendingMessage += (sender, args) =>
+            //{
+            //    if (args.Message.Details.User == null)
+            //    {
+            //        // Possbily an unhandled exception because we "should" be supplying user data when we handle errors
+            //        // todo: figure out a way to get the user information from the context here
+            //        // NOTE:  when RG 5.3.2 gets its bug fixed we can get user info from the HTTP Context
+            //        // related: https://raygun.com/forums/thread/65336#65335 &  https://raygun.com/forums/thread/65407
+            //        args.Message.Details.User = new RaygunIdentifierMessage(UnhandledExceptionTag)
+            //        {
+            //            UUID = "abc123",
+            //            Email = "ronald@example.com",
+            //            FullName = "Ronald Raygun",
+            //        };
 
-                    args.Message.Details.Tags = new[] { UnhandledExceptionTag };
+            //        args.Message.Details.Tags = new[] { UnhandledExceptionTag };
 
-                }
+            //    }
 
-                // If you want to cancel the message based on some decision:
-                // args.Cancel = true;
-            };
+            //    // If you want to cancel the message based on some decision:
+            //    // args.Cancel = true;
+            //};
 
        
             // strip out all cookie info:
@@ -59,7 +59,7 @@ namespace Common.AspNet
             client.IgnoreServerVariableNames("ALL_HTTP", "ALL_RAW", "HTTP_COOKIE");
 
             // strip out certain headers
-            client.IgnoreHeaderNames("Authorization", "Cookie");
+            client.IgnoreHeaderNames("Connection", "Host");
 
             // ignore password field on the form
             client.IgnoreFormFieldNames("*password*");

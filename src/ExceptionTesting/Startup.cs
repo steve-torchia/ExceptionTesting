@@ -37,6 +37,9 @@ namespace ExceptionTesting
             {
                 ClientProvider = new RayGunClientProvider("KeyGoesHere")
             });
+
+            // need the custom exception filter in IoC so the RayGun provider can get injected in it
+            //services.AddScoped<CustomExceptionFilterAttribute>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

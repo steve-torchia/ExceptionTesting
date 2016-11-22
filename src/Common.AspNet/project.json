@@ -16,7 +16,7 @@
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
     "Microsoft.AspNetCore.Server.Kestrel.Https": "1.0.1",
-    "Mindscape.Raygun4Net.AspNetCore": "5.3.1"
+    "Mindscape.Raygun4Net.AspNetCore": "5.3.2"
   },
   "frameworks": {
     "netstandard1.6": {
