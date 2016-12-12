@@ -18,7 +18,6 @@ namespace ExceptionTesting
                 .UseStartup<Startup>()
                 .Build();
 
-            host.Run();
         }
     }
 }
